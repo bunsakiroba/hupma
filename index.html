@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="https://web-static.archive.org/_static/js/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app206.us.archive.org';v.server_ms=224;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=o9P2E1FK" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://aoli.al/","20260118235732","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1768780652");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+	<meta name="generator" content="Hugo 0.145.0">
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ao Li</title>
+<meta name="title" content="Ao Li"/>
+<meta name="description" content="Ao Li"/>
+<meta name="keywords" content="chrome,concurrency,concurrency bug,data race,deadlock,debugging,fray,game,jdk,race condition,range request,"/>
+
+
+<meta property="og:url" content="https://web.archive.org/web/20260118235732/https://aoli.al/">
+  <meta property="og:site_name" content="Ao Li">
+  <meta property="og:title" content="Ao Li">
+  <meta property="og:description" content="I am a final year PhD student advised by Rohan Padhye and Vyas Sekar. My CV, GitHub, Bluesky, and Google Scholar. You may also want to work with me. My email address is aoli@cs.cmu.edu. 📢📢📢 My partner (Xiangpeng Hao) and I are on the tenure track faculty job market this year, seeking positions in computer science and related areas. I design and build tools that make complex concurrent and distributed systems easier to debug and test. My research treats applicability as a first-class concern—emphasizing not just algorithmic efficiency, but also usability and real-world practicality. I've developed tools such as: ExChain (NSDI '24), which analyzes complex exception interactions to dramatically reduce debugging effort; Fray (OOPSLA 25'), a controlled concurrency testing platform that helps developers catch bugs in complex concurrent systems; and Fest (NSDI 26'), a feedback-guided testing algorithm that catches design bugs early in distributed system development.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ao Li">
+  <meta name="twitter:description" content="I am a final year PhD student advised by Rohan Padhye and Vyas Sekar. My CV, GitHub, Bluesky, and Google Scholar. You may also want to work with me. My email address is aoli@cs.cmu.edu. 📢📢📢 My partner (Xiangpeng Hao) and I are on the tenure track faculty job market this year, seeking positions in computer science and related areas. I design and build tools that make complex concurrent and distributed systems easier to debug and test. My research treats applicability as a first-class concern—emphasizing not just algorithmic efficiency, but also usability and real-world practicality. I've developed tools such as: ExChain (NSDI '24), which analyzes complex exception interactions to dramatically reduce debugging effort; Fray (OOPSLA 25'), a controlled concurrency testing platform that helps developers catch bugs in complex concurrent systems; and Fest (NSDI 26'), a feedback-guided testing algorithm that catches design bugs early in distributed system development.">
+
+
+
+
+  <meta itemprop="name" content="Ao Li">
+  <meta itemprop="description" content="I am a final year PhD student advised by Rohan Padhye and Vyas Sekar. My CV, GitHub, Bluesky, and Google Scholar. You may also want to work with me. My email address is aoli@cs.cmu.edu. 📢📢📢 My partner (Xiangpeng Hao) and I are on the tenure track faculty job market this year, seeking positions in computer science and related areas. I design and build tools that make complex concurrent and distributed systems easier to debug and test. My research treats applicability as a first-class concern—emphasizing not just algorithmic efficiency, but also usability and real-world practicality. I've developed tools such as: ExChain (NSDI '24), which analyzes complex exception interactions to dramatically reduce debugging effort; Fray (OOPSLA 25'), a controlled concurrency testing platform that helps developers catch bugs in complex concurrent systems; and Fest (NSDI 26'), a feedback-guided testing algorithm that catches design bugs early in distributed system development.">
+  <meta itemprop="datePublished" content="2025-09-18T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-18T00:00:00+00:00">
+  <meta itemprop="wordCount" content="633">
+<meta name="referrer" content="no-referrer-when-downgrade"/>
+
+  <link rel="alternate" type="application/rss+xml" href="https://web.archive.org/web/20260118235732/https://aoli.al/index.xml" title="Ao Li"/>
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/web/20260118235732cs_/https://aoli.al/assets/syntax-theme.css">
+</head>
+
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;" toolbar-mode="auto">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;" nav="async">
+      </form>
+    
+                    
+         
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+            
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+                
+       
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="/web/20260118235732/http://web.archive.org/screenshot/https://aoli.al/"
+           id="wm-screenshot"
+           title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+    
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/commoncrawl)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/commoncrawl" target="_new"><span class="wm-title">Common Crawl</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Web crawl data from Common Crawl.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20260118235732/https://aoli.al/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(775,27,25,2,"web","https://aoli.al/","20260118235732",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+  <header><a href="/web/20260118235732/https://aoli.al/" class="title">
+  <h2>Ao Li</h2>
+</a>
+<nav>
+<a href="/web/20260118235732/https://aoli.al/"></a>
+
+<a href="/web/20260118235732/https://aoli.al/blogs/">blog</a>
+
+</nav>
+</header>
+  <main>
+<div class="intro-section" style="display: flex; align-items: flex-start; gap: 20px;">
+    <img src="/web/20260118235732im_/https://aoli.al/li_ao.jpg" alt="Ao Li" width="250" style="flex-shrink: 0; margin-top: 7px;">
+    <div style="display: flex; flex-direction: column;">
+        <p style="margin-top: 0;">
+        I am a final year PhD student advised by
+        <a href="https://web.archive.org/web/20260118235732/https://rohan.padhye.org/">Rohan Padhye</a> and
+        <a href="https://web.archive.org/web/20260118235732/https://users.ece.cmu.edu/~vsekar/">Vyas Sekar</a>.
+        </p>
+        <p>
+        My <a href="https://web.archive.org/web/20260118235732/https://aoli.al/cv/Ao_Li_CV.pdf">CV</a>, <a href="https://web.archive.org/web/20260118235732/https://github.com/aoli-al">GitHub</a>, <a href="https://web.archive.org/web/20260118235732/https://bsky.app/profile/aoli.al">Bluesky</a>, and <a href="https://web.archive.org/web/20260118235732/https://scholar.google.com/citations?user=01iPJNcAAAAJ&amp;hl=en">Google Scholar</a>. You may also want to <a href="/web/20260118235732/https://aoli.al/blogs/work-with-me">work with me</a>.
+        My email address is <code><a href="/web/20260118235732/https://aoli.al/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f3929c9f9ab39080dd909e86dd969786">[email&#160;protected]</a></code>.
+        </p>
+    </div>
+</div>
+<p>
+<b>
+📢📢📢 My partner (<a href="https://web.archive.org/web/20260118235732/https://xiangpeng.systems/">Xiangpeng Hao</a>) and I are on the tenure track faculty job market this year, seeking positions in computer science and related areas.
+</b>
+</p>
+<p>
+I design and build tools that make <strong>complex concurrent and distributed systems easier to debug and test</strong>. My research treats <strong>applicability</strong> as a first-class concern—emphasizing not just algorithmic efficiency, but also usability and real-world practicality. I've developed tools such as: <a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/exchain-nsdi24.pdf">ExChain (NSDI '24)</a>, which analyzes complex exception interactions to dramatically reduce debugging effort; <a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/fray-oopsla.pdf">Fray (OOPSLA 25')</a>, a controlled concurrency testing platform that helps developers catch bugs in complex concurrent systems; and <a href="https://web.archive.org/web/20260118235732/https://github.com/aoli-al/Fest-artifact">Fest (NSDI 26')</a>, a feedback-guided testing algorithm that catches design bugs early in distributed system development.
+</p>
+<b>Testimonies</b>
+<a href="https://web.archive.org/web/20260118235732/https://news.ycombinator.com/item?id=44211779">
+    <img src="/web/20260118235732im_/https://aoli.al/images/homepage/fray-hackernews.png" style="flex-shrink: 0;"/>
+</a>
+<a href="https://web.archive.org/web/20260118235732/https://www.elastic.co/search-labs/blog/concurrency-bugs-lucene-debugging">
+    <img src="/web/20260118235732im_/https://aoli.al/images/homepage/es-blog.png" style="flex-shrink: 0;"/>
+</a>
+<h2 id="publication">Publication</h2>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/fest-nsdi26.pdf">Feedback-guided Adaptive Testing of Distributed Systems Designs</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/p-org/P">[Code]</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/aoli-al/Fest-artifact">[Artifact]</a><br>
+<strong>Ao Li</strong>, Ankush Desai, Rohan Padhye <br>
+NSDI 2026</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/fray-oopsla.pdf">Fray: An Efficient General-Purpose Concurrency Testing Platform for the JVM</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/cmu-pasta/fray">[Code]</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/cmu-pasta/fray-benchmark">[Artifact]</a> <a href="https://web.archive.org/web/20260118235732/https://arxiv.org/abs/2501.12618">[Extended Version]</a><br>
+<strong>Ao Li</strong>, Byeongjee Kang, Vasudev Vikram, Isabella Laybourn, Samvid Dharanikota, Shrey Tiwari, Rohan Padhye <br>
+OOPSLA 2025</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://dl.acm.org/doi/10.1145/3742894">The Havoc Paradox in Generator-Based Fuzzing</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/cmu-pasta/havoc-mutation-eval">[Artifact]</a> <br>
+<strong>Ao Li</strong>, Madonna Huang, Vasudev Vikram, Caroline Lemieux, and Rohan Padhye <br>
+TOSEM 2025</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://arxiv.org/abs/2209.04026">SPIDER: Fuzzing for Stateful Performance Issues in the ONOS Software-Defined Network Controller</a> <br>
+<strong>Ao Li</strong>, Rohan Padhye, Vyas Sekar<br>
+ICST 2025</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/datetimebugs-msr25.pdf">It&rsquo;s About Time: An Empirical Study of Date and Time Bugs in Open-Source Python Software</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/cmu-pasta/date-time">[Artifact]</a><br>
+Shrey Tiwari, Serena Chen, Alexander Joukov, Peter Vandervelde, <strong>Ao Li</strong>, Rohan Padhye <br>
+MSR 2025 <strong>ACM SIGSOFT Distinguished Paper Award</strong></p>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/havoc-fuzzing24.pdf">The Havoc Paradox in Generator-Based Fuzzing (Registered Report)</a> <br>
+<strong>Ao Li</strong>, Madonna Huang, Caroline Lemieux, Rohan Padhye<br>
+FUZZING 2024</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/exchain-nsdi24.pdf">ExChain: Exception Dependency Analysis for Root Cause Diagnosis</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/aoli-al/exchain">[Code]</a> <br>
+<strong>Ao Li</strong>, Shan Lu, Suman Nath, Rohan Padhye, Vyas Sekar<br>
+NSDI 2024</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/mu2-issta23.pdf">Guiding Greybox Fuzzing with Mutation Testing</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/cmu-pasta/mu2">[Artifact]</a> <br>
+Vasudev Vikram, Isabella Laybourn, <strong>Ao Li</strong>, Nicole Nair, Kelton OBrien, Rafaello Sanna, Rohan Padhye<br>
+ISSTA 2023 <strong>ACM SIGSOFT Distinguished Paper Award</strong></p>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/hfuse-cgo22.pdf">Automatic Horizontal Fusion for GPU Kernels</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/aoli-al/HFuse">[Artifact]</a> <br>
+<strong>Ao Li</strong>, Bojian Zheng, Gennady Pekhimenko, Fan Long<br>
+CGO 2022</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://dl.acm.org/doi/10.1145/3484266.3487380">Watching the watchmen: Least privilege for managed network services</a> <br>
+Guyue Liu, <strong>Ao Li</strong>, Christopher Canel, Vyas Sekar<br>
+HotNets 2021</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://aoli.al/papers/solythesis-pldi20.pdf">Securing Smart Contract with Runtime Validation</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/aoli-al/Solythesis">[Code]</a> <a href="https://web.archive.org/web/20260118235732/https://github.com/aoli-al/solythesis-artifact">[Artifact]</a> <br>
+<strong>Ao Li</strong>, Jemin Andrew Choi, Fan Long<br>
+PLDI 2020</p>
+<p><a href="https://web.archive.org/web/20260118235732/http://openaccess.thecvf.com/content_cvpr_2018/html/Yang_Polarimetric_Dense_Monocular_CVPR_2018_paper.html">Polarimetric Dense Monocular SLAM</a><br>
+Luwei Yang, Feitong Tan, <strong>Ao Li</strong>, Zhaopeng Cui, Yasutaka Furukawa, Ping Tan<br>
+CVPR 2018</p>
+<h2 id="patent">Patent</h2>
+<p><a href="https://web.archive.org/web/20260118235732/https://patents.google.com/patent/US20170286383A1/en">Augmented Imaging Assistance For Visual Impairment</a><br>
+Anirudh Koul, <strong>Ao Li</strong>, Elias Haroun, Irene Wen Ling Chen, Shweta Sharma, Christiano Bianchet,
+Saqib Shaikh, Stéphane Morichère-Matte, Biing Tsyr Lai, Nathan Pak Kei Lam, Wendy Lu</p>
+<p><a href="https://web.archive.org/web/20260118235732/https://patents.google.com/patent/US11245614B1/en">Managing network configuration through network path analysis</a><br>
+John David Backes, Samuel Bayless, Daniel William Dacosta, <strong>Ao Li</strong></p>
+<h2 id="work-experience">Work Experience</h2>
+<h3 id="internships">Internships</h3>
+<p>Research Intern: Antithesis (Summer 2025), Distributed System Testing</p>
+<p>Applied Scientist Intern: Amazon AWS (Summer 2023), Distributed System Testing</p>
+<p>Research Intern: Microsoft Research (Summer 2022), Cloud Reliability</p>
+<p>Software Engineer Intern: Amazon AWS (Summer 2020), Network Verification</p>
+<p>Software Engineer Intern: Google (Summer 2017), Android LLVM Toolchain</p>
+<p>Software Engineer Intern: Google (Summer 2016), Gmail iOS Notification</p>
+<p>Software Engineer Intern: Microsoft (Spring 2016), Seeing AI</p>
+<h3 id="teaching">Teaching</h3>
+<p>Guest Lecturer: <a href="/web/20260118235732/https://aoli.al/presentations/2025/10/find-bugs-in-concurrent-programs/#/title-slide">Find Bugs in Concurrent Programs</a><br>
+Course: <a href="https://web.archive.org/web/20260118235732/https://siebelschool.illinois.edu/academics/courses/cs527-120258">Topics in Software Engineering (CS527)</a><br>
+University of Illinois Urbana-Champaign</p>
+<p>Guest Lecturer: <a href="./slides/14-735-secure-coding-guest-lecture.pdf">Fuzz Testing</a><br>
+Course: <a href="https://web.archive.org/web/20260118235732/https://www.cylab.cmu.edu/education/course-list/secure-coding.html">Secure Coding (14-735)</a><br>
+Carnegie Mellon University</p>
+<p>Teaching Assistant: <a href="https://web.archive.org/web/20260118235732/https://cmu-313.github.io/_old/S24/#teaching-assistants">Foundations of Software Engineering (17-313)</a> <br>
+Carnegie Mellon University</p>
+<p>Teaching Assistant: <a href="https://web.archive.org/web/20260118235732/https://cmu-fantastic-bugs.github.io/archives/s23/index.html">Fantastic Bugs &amp; How to Find Them (17-712)</a><br>
+Carnegie Mellon University</p>
+<p>Teaching Assistant: <a href="https://web.archive.org/web/20260118235732/https://artsci.calendar.utoronto.ca/course/csc488h1">Compilers and Interpreters (CSC 488/2107)</a> <br>
+University of Toronto</p>
+<p>Teaching Assistant: <a href="https://web.archive.org/web/20260118235732/https://artsci.calendar.utoronto.ca/course/csc324h1">Programming Language (CSC 324)</a> <br>
+University of Toronto</p>
+<p>Teaching Assistant: <a href="https://web.archive.org/web/20260118235732/https://www.sfu.ca/outlines.html?2018/spring/cmpt/379/d100">Principles of Compiler Design (CMPT 379)</a> <br>
+Simon Fraser University</p>
+<h2 id="education">Education</h2>
+<p>Ph.D. Computer Science, Carnegie Mellon University (2020-)</p>
+<p>M.Sc. Computer Science, University of Toronto (2018-2020)</p>
+<p>B.Sc. Computer Science, Simon Fraser University (2015-2018)</p>
+<p>B.Eng. Computer Science, Zhejiang University (2013-2018)</p>
+
+
+  </main>
+  <footer>Made with <a href="https://web.archive.org/web/20260118235732/https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+<script data-cfasync="false" src="/web/20260118235732js_/https://aoli.al/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://web.archive.org/web/20260118235732js_/https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;8cd2280de9914be99138a556f52c80e9&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!--
+     FILE ARCHIVED ON 23:57:32 Jan 18, 2026 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:49:51 Aug 18, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.567
+  exclusion.robots: 0.058
+  exclusion.robots.policy: 0.041
+  esindex: 0.01
+  cdx.remote: 23.488
+  LoadShardBlock: 115.316 (3)
+  PetaboxLoader3.datanode: 97.381 (4)
+  PetaboxLoader3.resolve: 70.46 (2)
+  load_resource: 59.065
+  nav: 0.236 (6)
+-->
